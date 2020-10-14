@@ -59,7 +59,6 @@ Adds reservation availability for a new restraurant in the database
   "openingTime": "Number,
   "closingTime": "Number"
 }
-
 `
 
 **Update Calendar Info**
@@ -93,7 +92,6 @@ Updates availability in calendar for particular restaurant
   "openingTime": "Number,
   "closingTime": "Number"
 }
-
 `
 
 **Delete Restaurant**
