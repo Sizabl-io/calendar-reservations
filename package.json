@@ -9,6 +9,7 @@
   },
   "scripts": {
     "start": "nodemon server/index.js",
+    "start-post": "nodemon newserver/index.js",
     "start-p": "nodemon proxy/server.js",
     "react-dev": "webpack -d --watch",
     "build-d": "wepback --mode=development",
@@ -31,6 +32,7 @@
     "lodash": "^4.6.1",
     "mysql": "^2.18.1",
     "nodemon": "^2.0.4",
+    "pg": "^8.4.1",
     "react": "^16.13.1",
     "react-dev": "0.0.1",
     "react-dom": "^16.13.1",
