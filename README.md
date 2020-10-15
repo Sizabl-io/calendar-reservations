@@ -2,7 +2,7 @@
 
 # Server API
 
-###**Get Calendar Info**
+### Get Calendar Info
 
 Gets all information about availability for all restaurants
 
@@ -31,7 +31,7 @@ Gets all information about availability for all restaurants
   }]
 ```
 
-###**Post Calendar Info**
+### Post Calendar Info
 
 Adds reservation availability for a new restraurant in the database
 
@@ -60,7 +60,7 @@ Adds reservation availability for a new restraurant in the database
   }]
 ```
 
-###**Update Calendar Info**
+### Update Calendar Info
 
 Updates availability in calendar for particular restaurant
 
@@ -93,7 +93,7 @@ Updates availability in calendar for particular restaurant
   }]
 ```
 
-###**Delete Restaurant**
+### Delete Restaurant
 
 Deletes reservation availability for a restaurant
 
@@ -104,8 +104,6 @@ Deletes reservation availability for a restaurant
 `id` restaurant id
 
 **Success Status Code:** 204
-
-**Request Body:** Expects ID
 
 ## Related Projects
 
