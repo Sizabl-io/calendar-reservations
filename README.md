@@ -1,8 +1,11 @@
-# Project Name
+## Related Projects
+  -
+  -
+  -
 
 # Server API
 
-**Get Calendar Info**
+### Get Calendar Info
 
 Gets all information about availability for all restaurants
 
@@ -12,27 +15,26 @@ Gets all information about availability for all restaurants
 
 **Returns:** JSON
 
-`
-{
-  "restaurantId": "Number",
-  "reservationDate": "String",
-  "reservationMonth": "String",
-  "reservationDay": "String",
-  "reservationTimes": "String",
-  "currentYear": "Number",
-  "available": "Boolean",
-  "people": "Number or String",
-  "firstName": "String",
-  "lastName": "String",
-  "email": "String",
-  "phoneNumber": "String",
-  "notes": "String",
-  "openingTime": "Number,
-  "closingTime": "Number"
-}
-`
+``` json
+[{
+    "reservationDate": "String",
+    "reservationMonth": "String",
+    "reservationDay": "String",
+    "reservationTimes": "String",
+    "currentYear": "Number",
+    "available": "Boolean",
+    "people": "Number or String",
+    "firstName": "String",
+    "lastName": "String",
+    "email": "String",
+    "phoneNumber": "String",
+    "notes": "String",
+    "openingTime": "Number",
+    "closingTime": "Number"
+  }]
+```
 
-**Post Calendar Info**
+### Post Calendar Info
 
 Adds reservation availability for a new restraurant in the database
 
@@ -42,26 +44,26 @@ Adds reservation availability for a new restraurant in the database
 
 **Request Body:** Expects JSON with following keys:
 
-`
-{
-  "reservationDate": "String",
-  "reservationMonth": "String",
-  "reservationDay": "String",
-  "reservationTimes": "String",
-  "currentYear": "Number",
-  "available": "Boolean",
-  "people": "Number or String",
-  "firstName": "String",
-  "lastName": "String",
-  "email": "String",
-  "phoneNumber": "String",
-  "notes": "String",
-  "openingTime": "Number,
-  "closingTime": "Number"
-}
-`
+``` json
+[{
+    "reservationDate": "String",
+    "reservationMonth": "String",
+    "reservationDay": "String",
+    "reservationTimes": "String",
+    "currentYear": "Number",
+    "available": "Boolean",
+    "people": "Number or String",
+    "firstName": "String",
+    "lastName": "String",
+    "email": "String",
+    "phoneNumber": "String",
+    "notes": "String",
+    "openingTime": "Number",
+    "closingTime": "Number"
+  }]
+```
 
-**Update Calendar Info**
+### Update Calendar Info
 
 Updates availability in calendar for particular restaurant
 
@@ -75,26 +77,26 @@ Updates availability in calendar for particular restaurant
 
 **Request Body:** Expects JSON with following keys (only include kets to be updated)
 
-`
-{
-  "reservationDate": "String",
-  "reservationMonth": "String",
-  "reservationDay": "String",
-  "reservationTimes": "String",
-  "currentYear": "Number",
-  "available": "Boolean",
-  "people": "Number or String",
-  "firstName": "String",
-  "lastName": "String",
-  "email": "String",
-  "phoneNumber": "String",
-  "notes": "String",
-  "openingTime": "Number,
-  "closingTime": "Number"
-}
-`
+``` json
+[{
+    "reservationDate": "String",
+    "reservationMonth": "String",
+    "reservationDay": "String",
+    "reservationTimes": "String",
+    "currentYear": "Number",
+    "available": "Boolean",
+    "people": "Number or String",
+    "firstName": "String",
+    "lastName": "String",
+    "email": "String",
+    "phoneNumber": "String",
+    "notes": "String",
+    "openingTime": "Number",
+    "closingTime": "Number"
+  }]
+```
 
-**Delete Restaurant**
+### Delete Restaurant
 
 Deletes reservation availability for a restaurant
 
@@ -106,40 +108,4 @@ Deletes reservation availability for a restaurant
 
 **Success Status Code:** 204
 
-**Request Body:** Expects Id
-
-## Related Projects
-
-  - https://github.com/teamName/repo
-  - https://github.com/teamName/repo
-  - https://github.com/teamName/repo
-  - https://github.com/teamName/repo
-
-## Table of Contents
-
-1. [Usage](#Usage)
-1. [Requirements](#requirements)
-1. [Development](#development)
-
-## Usage
-
-> Some usage instructions
-
-## Requirements
-
-An `nvmrc` file is included if using [nvm](https://github.com/creationix/nvm).
-
-- Node 6.13.0
-- etc
-
-## Development
-
-### Installing Dependencies
-
-From within the root directory:
-
-```sh
-npm install -g webpack
-npm install
-```
 
