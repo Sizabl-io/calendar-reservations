@@ -2,7 +2,7 @@
 
 # Server API
 
-**Get Calendar Info**
+###**Get Calendar Info**
 
 Gets all information about availability for all restaurants
 
@@ -12,27 +12,26 @@ Gets all information about availability for all restaurants
 
 **Returns:** JSON
 
-`
-{
-  "restaurantId": "Number",
-  "reservationDate": "String",
-  "reservationMonth": "String",
-  "reservationDay": "String",
-  "reservationTimes": "String",
-  "currentYear": "Number",
-  "available": "Boolean",
-  "people": "Number or String",
-  "firstName": "String",
-  "lastName": "String",
-  "email": "String",
-  "phoneNumber": "String",
-  "notes": "String",
-  "openingTime": "Number,
-  "closingTime": "Number"
-}
-`
+``` json
+[{
+    "reservationDate": "String",
+    "reservationMonth": "String",
+    "reservationDay": "String",
+    "reservationTimes": "String",
+    "currentYear": "Number",
+    "available": "Boolean",
+    "people": "Number or String",
+    "firstName": "String",
+    "lastName": "String",
+    "email": "String",
+    "phoneNumber": "String",
+    "notes": "String",
+    "openingTime": "Number",
+    "closingTime": "Number"
+  }]
+```
 
-**Post Calendar Info**
+###**Post Calendar Info**
 
 Adds reservation availability for a new restraurant in the database
 
@@ -42,26 +41,26 @@ Adds reservation availability for a new restraurant in the database
 
 **Request Body:** Expects JSON with following keys:
 
-`
-{
-  "reservationDate": "String",
-  "reservationMonth": "String",
-  "reservationDay": "String",
-  "reservationTimes": "String",
-  "currentYear": "Number",
-  "available": "Boolean",
-  "people": "Number or String",
-  "firstName": "String",
-  "lastName": "String",
-  "email": "String",
-  "phoneNumber": "String",
-  "notes": "String",
-  "openingTime": "Number,
-  "closingTime": "Number"
-}
-`
+``` json
+[{
+    "reservationDate": "String",
+    "reservationMonth": "String",
+    "reservationDay": "String",
+    "reservationTimes": "String",
+    "currentYear": "Number",
+    "available": "Boolean",
+    "people": "Number or String",
+    "firstName": "String",
+    "lastName": "String",
+    "email": "String",
+    "phoneNumber": "String",
+    "notes": "String",
+    "openingTime": "Number",
+    "closingTime": "Number"
+  }]
+```
 
-**Update Calendar Info**
+###**Update Calendar Info**
 
 Updates availability in calendar for particular restaurant
 
@@ -75,26 +74,26 @@ Updates availability in calendar for particular restaurant
 
 **Request Body:** Expects JSON with following keys (only include kets to be updated)
 
-`
-{
-  "reservationDate": "String",
-  "reservationMonth": "String",
-  "reservationDay": "String",
-  "reservationTimes": "String",
-  "currentYear": "Number",
-  "available": "Boolean",
-  "people": "Number or String",
-  "firstName": "String",
-  "lastName": "String",
-  "email": "String",
-  "phoneNumber": "String",
-  "notes": "String",
-  "openingTime": "Number,
-  "closingTime": "Number"
-}
-`
+``` json
+[{
+    "reservationDate": "String",
+    "reservationMonth": "String",
+    "reservationDay": "String",
+    "reservationTimes": "String",
+    "currentYear": "Number",
+    "available": "Boolean",
+    "people": "Number or String",
+    "firstName": "String",
+    "lastName": "String",
+    "email": "String",
+    "phoneNumber": "String",
+    "notes": "String",
+    "openingTime": "Number",
+    "closingTime": "Number"
+  }]
+```
 
-**Delete Restaurant**
+###**Delete Restaurant**
 
 Deletes reservation availability for a restaurant
 
@@ -106,7 +105,7 @@ Deletes reservation availability for a restaurant
 
 **Success Status Code:** 204
 
-**Request Body:** Expects Id
+**Request Body:** Expects ID
 
 ## Related Projects
 
