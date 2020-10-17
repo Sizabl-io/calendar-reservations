@@ -5,11 +5,15 @@
 
 # Server API
 
-### Get Calendar Info
+### Get Restaurant Availability
 
-Gets all information about availability for all restaurants
+Gets availability for a restaurant
 
-`GET /api/calendar`
+`GET /api/:restaurantId/availability`
+
+**Path Parameters**
+
+`id` restaurant id
 
 **Success Status Code:** `200`
 
@@ -18,12 +22,8 @@ Gets all information about availability for all restaurants
 ``` json
 [{
     "reservationDate": "String",
-    "reservationMonth": "String",
-    "reservationDay": "String",
-    "reservationTimes": "String",
-    "currentYear": "Number",
-    "available": "Boolean",
-    "people": "Number or String",
+    "reservationTime": "String",
+    "numberOfPeople": "Number or String",
     "firstName": "String",
     "lastName": "String",
     "email": "String",
@@ -34,11 +34,11 @@ Gets all information about availability for all restaurants
   }]
 ```
 
-### Post Calendar Info
+### Post Reservation
 
-Adds reservation availability for a new restraurant in the database
+Creates new reservation for a restaurant
 
-`POST /api/calendar`
+`POST /api/:restaurantId/availability`
 
 **Success Status Code:** 201
 
@@ -47,64 +47,52 @@ Adds reservation availability for a new restraurant in the database
 ``` json
 [{
     "reservationDate": "String",
-    "reservationMonth": "String",
-    "reservationDay": "String",
-    "reservationTimes": "String",
-    "currentYear": "Number",
-    "available": "Boolean",
-    "people": "Number or String",
+    "reservationTime": "String",
+    "numberOfPeople": "Number or String",
     "firstName": "String",
     "lastName": "String",
     "email": "String",
     "phoneNumber": "String",
     "notes": "String",
-    "openingTime": "Number",
-    "closingTime": "Number"
   }]
 ```
 
-### Update Calendar Info
+### Update Reservation
 
 Updates availability in calendar for particular restaurant
 
-`PATCH /api/calendar/:id`
+`PATCH /api/:restaurantId/availability/:revervationId`
 
 **Path Parameters**
 
-`id` restaurant id
+`reservationId` reservation id
 
 **Success Status Code:** 204
 
-**Request Body:** Expects JSON with following keys (only include kets to be updated)
+**Request Body:** Expects JSON with following keys (only include keys to be updated)
 
 ``` json
 [{
     "reservationDate": "String",
-    "reservationMonth": "String",
-    "reservationDay": "String",
     "reservationTimes": "String",
-    "currentYear": "Number",
-    "available": "Boolean",
-    "people": "Number or String",
+    "numberOfPeople": "Number or String",
     "firstName": "String",
     "lastName": "String",
     "email": "String",
     "phoneNumber": "String",
     "notes": "String",
-    "openingTime": "Number",
-    "closingTime": "Number"
   }]
 ```
 
-### Delete Restaurant
+### Delete Reservation
 
-Deletes reservation availability for a restaurant
+Deletes reservation
 
-`DELETE /api/calendar/:id`
+`DELETE /api/:restaurantId/availability/:revervationId`
 
 **Path Parameters**
 
-`id` restaurant id
+`reservationId` reservation id
 
 **Success Status Code:** 204
 

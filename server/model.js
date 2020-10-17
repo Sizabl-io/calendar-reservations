@@ -1,4 +1,5 @@
 const db = require('../database');
+console.log(db);
 
 const getData = (cb) => {
   const q = 'SELECT * FROM reservation';
