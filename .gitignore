@@ -27,6 +27,7 @@ bundle.js
 .env
 docker-compose-build.yml
 
+newrelic.js
+
 # CSV Files
 *.csv
-newrelic.js
