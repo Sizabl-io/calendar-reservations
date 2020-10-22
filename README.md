@@ -13,7 +13,7 @@ Gets availability for a restaurant
 
 **Path Parameters**
 
-`id` restaurant id
+`restaurantId` restaurant id
 
 **Success Status Code:** `200`
 
@@ -40,6 +40,10 @@ Creates new reservation for a restaurant
 
 `POST /api/:restaurantId/availability`
 
+**Path Parameters**
+
+`restaurantId` restaurant id
+
 **Success Status Code:** 201
 
 **Request Body:** Expects JSON with following keys:
@@ -61,11 +65,12 @@ Creates new reservation for a restaurant
 
 Updates availability in calendar for particular restaurant
 
-`PATCH /api/:restaurantId/availability/:revervationId`
+`PATCH /api/:restaurantId/availability/:reservationId`
 
 **Path Parameters**
 
-`reservationId` reservation id
+`reservationId` reservation id,
+`restaurantId` restaurant id
 
 **Success Status Code:** 204
 
@@ -75,7 +80,7 @@ Updates availability in calendar for particular restaurant
 [{
     "reservationDate": "String",
     "reservationTimes": "String",
-    "numberOfPeople": "Number or String",
+    "numberOfPeople": "Number",
     "firstName": "String",
     "lastName": "String",
     "email": "String",
@@ -88,11 +93,12 @@ Updates availability in calendar for particular restaurant
 
 Deletes reservation
 
-`DELETE /api/:restaurantId/availability/:revervationId`
+`DELETE /api/:restaurantId/availability/:reservationId`
 
 **Path Parameters**
 
-`reservationId` reservation id
+`reservationId` reservation id,
+`restaurantId` restaurant id
 
 **Success Status Code:** 204
 

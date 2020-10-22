@@ -1,7 +1,8 @@
+require('newrelic');
 const express = require('express');
 
 const bodyParser = require('body-parser');
-const pool = require('../postgresql/index.js');
+const pool = require('../index.js');
 
 const app = express();
 const port = 3004;
@@ -9,8 +10,11 @@ const controllerHandler = require('./controller.js');
 
 app.use(bodyParser.json());
 
-app.get('/api/calendar', (req, res) => {
-  const q = 'SELECT * FROM subtest2';
+app.get('/api/availability/', (req, res) => {
+  // const id = parseInt(request.params.id);
+  // console.log(req);
+  const q = 'select * from subtest2';
+  // const values = [id];
   pool.query(q, (err, data) => {
     if (err) {
       res.status(400).send(err);
