@@ -10,9 +10,9 @@ const controllerHandler = require('./controller.js');
 
 app.use(bodyParser.json());
 
-app.get('/api/availability/', (req, res) => {
+app.get('/api/availability/:id', (req, res) => {
   // const id = parseInt(request.params.id);
-  // console.log(req);
+  console.log(req);
   const q = 'select * from subtest2';
   // const values = [id];
   pool.query(q, (err, data) => {

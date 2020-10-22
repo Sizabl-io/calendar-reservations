@@ -29,3 +29,4 @@ docker-compose-build.yml
 
 # CSV Files
 *.csv
+newrelic.js
