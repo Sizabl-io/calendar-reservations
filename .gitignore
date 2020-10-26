@@ -29,8 +29,8 @@ docker-compose-build.yml
 
 # ignore new relic
 
-newrelic.js
-newrelic_agent.log
+**newrelic.js
+**newrelic_agent.log
 bfg.jar
 
 # CSV Files
