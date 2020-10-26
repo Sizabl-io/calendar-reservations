@@ -9,7 +9,7 @@
 
 Gets availability for a restaurant
 
-`GET /api/:restaurantId/availability`
+`GET /api/restaurant/:restaurantId/availability`
 
 **Path Parameters**
 
@@ -38,7 +38,7 @@ Gets availability for a restaurant
 
 Creates new reservation for a restaurant
 
-`POST /api/:restaurantId/availability`
+`POST /api/restaurant/:restaurantId/availability`
 
 **Path Parameters**
 

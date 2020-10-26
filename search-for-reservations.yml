@@ -1,0 +1,48 @@
+config:
+  target: 'http://localhost:3004'
+  # holds function to generate random data
+  http:
+    pool: 2
+  phases:
+    - duration: 60
+      arrivalRate: 200
+      name: Warm up
+    - duration: 60
+      arrivalRate: 200
+      rampTo: 1000
+      name: Ramp up load
+    - duration: 30
+      arrivalRate: 1000
+      name: Sustained load
+  processor: './artilleryDataGenerator.js'
+  payload:
+    # Load search keywords from an external CSV file and make them available
+    # to virtual user scenarios as variable 'keywords':
+    path: 'ids.csv'
+    fields:
+      - 'ids'
+scenarios:
+  - name: 'search and make reservations for particular restaurant'
+    flow:
+      # - log: 'The id for the get request is {{ ids }}'
+      - get:
+        # get information for a particular restaurant
+          url: '/api/restaurant/{{ ids }}/availability'
+      # client thinks for 5 seconds
+      - think: 1
+      # call function to generate random data
+      - function: 'dataGenerator'
+      # make reservation for restaurant
+      - post:
+          url: '/api/restaurant/{{ ids }}/availability'
+          json:
+            restaurant_id: '{{ ids }}'
+            reservation_date_id: '{{ reservation_date_id }}'
+            reservation_times_id: '{{ reservation_times_id }}'
+            user_id: '{{ user_id }}'
+            number_of_guests: '{{ number_of_guests }}'
+            notes: '{{ notes }}'
+      # log for debugging
+      # - log: 'Sent a request to /api/restaurant/{{ ids }}/availability with {{ reservation_date_id }}, {{ reservation_times_id }}, {{ user_id }}, {{ number_of_guests }}, {{ notes }}'
+
+
