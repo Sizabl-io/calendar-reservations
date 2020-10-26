@@ -10,24 +10,22 @@ const controllerHandler = require('./controller.js');
 
 app.use(bodyParser.json());
 
-app.get('/api/availability/:id', (req, res) => {
-  // const id = parseInt(request.params.id);
-  console.log(req);
-  const q = 'select * from subtest2';
-  // const values = [id];
-  pool.query(q, (err, data) => {
+app.get('/api/restaurant/:restaurantId/availability', (req, res) => {
+  const {restaurantId} = req.params;
+  const q = 'select reservation_id, reservations.restaurant_id, restaurant_name, opening_time, closing_time, seating_capacity, reservations.reservation_date_id, reservation_date, reservation_day, reservations.reservation_times_id, reservation_times, user_id, number_of_guests, notes from reservations inner join restaurant_info on reservations.restaurant_id = restaurant_info.restaurant_id inner join reservation_date on reservations.reservation_date_id = reservation_date.reservation_date_id inner join reservation_times on reservations.reservation_times_id = reservation_times.reservation_times_id where reservations.restaurant_id = $1';
+  pool.query(q, [restaurantId], (err, data) => {
     if (err) {
       res.status(400).send(err);
     } else {
-      res.status(200).send(data);
+      res.status(200).send(data.rows);
     }
   });
 });
 
-app.post('/api/calendar', (req, res) => {
-  const q = 'INSERT INTO subtest2 (name, age) values($1, $2)';
-  const { name, age } = req.body;
-  pool.query(q, [name, age], (err, data) => {
+app.post('/api/restaurant/:restaurantId/availability', (req, res) => {
+  const q = 'INSERT INTO reservations (restaurant_id, reservation_date_id, reservation_times_id, user_id, number_of_guests, notes) values($1, $2, $3, $4, $5, $6)';
+  const { restaurant_id, reservation_date_id, reservation_times_id, user_id, number_of_guests, notes } = req.body;
+  pool.query(q, [restaurant_id, reservation_date_id, reservation_times_id, user_id, number_of_guests, notes], (err, data) => {
     if (err) {
       res.status(400).send(err);
     } else {

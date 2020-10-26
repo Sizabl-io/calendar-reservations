@@ -1,0 +1,6 @@
+# pack-refs with: peeled fully-peeled sorted 
+6dd103e84df61e58d668cf5e8ba0f1337fd6aa88 refs/heads/cassandra
+6195f7956d0e21546354d16b37d4cae2ff3637bc refs/heads/main
+8cfcee32ac1a1ad9c9f716b5b5ae2ca9666239c0 refs/heads/master
+58edbd86715e5457925927d2fee7c69cddd84e88 refs/heads/postgres
+78f0ede773b8360f2360a8a667c6ba300917141d refs/heads/postgresfinal

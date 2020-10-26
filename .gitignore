@@ -28,6 +28,7 @@ bundle.js
 docker-compose-build.yml
 
 newrelic.js
+newrelic_agent.log
 
 # CSV Files
 *.csv

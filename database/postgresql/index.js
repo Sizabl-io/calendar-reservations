@@ -5,7 +5,7 @@ const pool = new Pool({
   password: 'postgres',
   host: 'localhost',
   port: 5432,
-  database: 'test',
+  database: 'calendar_reservations',
 });
 
 module.exports = pool;
