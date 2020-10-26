@@ -29,6 +29,7 @@ docker-compose-build.yml
 
 newrelic.js
 newrelic_agent.log
+bfg.jar
 
 # CSV Files
 *.csv
