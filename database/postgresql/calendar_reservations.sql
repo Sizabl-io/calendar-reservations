@@ -1,6 +1,6 @@
 DROP DATABASE IF EXISTS calendar_reservations;
 
-CREATE DATABASE calender_reservations;
+CREATE DATABASE calendar_reservations;
 
 \c calendar_reservations;
 

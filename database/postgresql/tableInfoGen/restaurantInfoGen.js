@@ -7,8 +7,8 @@ let numDocuments = 5;
 let chunkSize = numRecords / numDocuments;
 
 // array of random opening and closing hours
-let openingHours = ['08:00:00', '09:00:00', '10:00:00','11:00:00','12:00:00', '13:00:00'];
-let closingHours = ['17:00:00','18:00:00','19:00:00','20:00:00','21:00:00','22:00:00', '23:00:00', '24:00:00'];
+let openingHours = ['08:00:00', '09:00:00', '10:00:00', '11:00:00', '12:00:00', '13:00:00'];
+let closingHours = ['17:00:00', '18:00:00', '19:00:00', '20:00:00', '21:00:00', '22:00:00', '23:00:00', '24:00:00'];
 
 const restaurantGen = (start, end, index) => {
   let writer = csvWriter();
