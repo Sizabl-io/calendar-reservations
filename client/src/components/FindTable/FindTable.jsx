@@ -5,7 +5,8 @@ import FindTableCalendar from './FindTableCalendar';
 import FindTableReservationTime from './FindTableReservationTime';
 import FindTablePeople from './FindTablePeople';
 
-const Frame = styled.div``;
+const Frame = styled.div`
+`;
 
 const BackdropModal = styled.div`
   position: fixed;

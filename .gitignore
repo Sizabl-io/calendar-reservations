@@ -26,3 +26,12 @@ bundle.js
 
 .env
 docker-compose-build.yml
+
+# ignore new relic
+
+**newrelic.js
+**newrelic_agent.log
+bfg.jar
+
+# CSV Files
+*.csv
